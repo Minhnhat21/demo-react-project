@@ -1,30 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
-import MyComponent from './components/MyComponent';
+// import {useDispatch, useSelector} from 'react-redux';
 
-function App() {
-  return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Hello World
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-        
-    //   </header>
-    // </div>
-    <div>
-      <MyComponent></MyComponent>
-    </div>
-  );
+import MyComponent from './components/MyComponent';
+import React from 'react';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <MyComponent></MyComponent>
+      </div>
+    );
+  }
 }
+
+
+// function App() {
+//   const count = useSelector(state => state.counter.count);
+//   const dispatch = useDispatch();
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <p>
+//           Hello World
+//         </p>
+//         <div>Count = {count}</div>
+//         <button onClick={() => dispatch(increaseCounter())}>Increase</button>
+//         <button onClick={() => dispatch(decreaseCouter())}>Decrease</button>
+//       </header>
+//     </div>
+//   );
+// }
 
 export default App;
