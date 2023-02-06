@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React from "react";
 import DisplayInfor from "./DisplayInfor";
-import UserInfo from "./UserInfor";
+import AddUserInfo from "./AddUserInfor";
 
 class MyComponent extends React.Component{
     
@@ -12,12 +12,18 @@ class MyComponent extends React.Component{
             {id: 3, name: 'Quang Teo', age: 35}
         ]
     }
-
+    handelAddUserInfo = (objectUser) => {
+        this.setState({
+            listUsers: [...this.state.listUsers, objectUser]
+        })
+    }
     render() {
         const myAddress = ['Hue','Viet Nam'];
         return(
             <div>
-               <UserInfo/>
+               <AddUserInfo
+                    handelAddUserInfo = {this.handelAddUserInfo}
+               />
                <br/>
                <DisplayInfor listUsers = {this.state.listUsers} />
             </div>
