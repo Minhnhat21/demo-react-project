@@ -20,6 +20,8 @@ class MyComponent extends React.Component{
     render() {
         const myAddress = ['Hue','Viet Nam'];
         return(
+            <>
+            <h1>Welcome</h1>
             <div>
                <AddUserInfo
                     handelAddUserInfo = {this.handelAddUserInfo}
@@ -27,6 +29,7 @@ class MyComponent extends React.Component{
                <br/>
                <DisplayInfor listUsers = {this.state.listUsers} />
             </div>
+            </>
         )
     }
 }
