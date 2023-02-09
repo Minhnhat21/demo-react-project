@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './DisplayInfo.scss';
 import logo from './../logo.svg';
 
@@ -52,10 +52,22 @@ const DisplayInfor = (props) => {
     //destructing array/object
     const { listUsers } = props;
 
+    //destructing assigment
+    const [isShowListUser, setIsShowListUser] = useState(true);
+    
+    const handleShowHide = () => {
+        setIsShowListUser(!isShowListUser)
+    }
     return(
         <div className="display-user-controller">
-            {true && 
-                <div>
+            
+            <div>
+                <span onClick={() => handleShowHide()}>
+                    {isShowListUser ? "Hide " : "Show "} list users: 
+                </span>
+            </div>
+            {isShowListUser && 
+                <>
                     {
                         listUsers.map((user) => {
                             return (   
@@ -69,7 +81,7 @@ const DisplayInfor = (props) => {
                             )
                         })
                     }
-                </div>
+                </>
             }
         </div>
     )
