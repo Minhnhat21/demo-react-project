@@ -60,7 +60,7 @@ const MyComponent = () => {
         setListUsers([objectUser,...listUsers])
     }
     const handleDeleteUserInfo = (userId) => {
-        let listUserInfoClone = [...this.state.listUsers];
+        let listUserInfoClone = [...listUsers];
         listUserInfoClone = listUserInfoClone.filter(user => user.id !== userId);
         // setListUsers(listUsers => {
         //     return {listUserInfoClone,...listUsers}

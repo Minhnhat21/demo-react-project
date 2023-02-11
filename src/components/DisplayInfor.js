@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState } from "react";
 import './DisplayInfo.scss';
 import logo from './../logo.svg';
 
@@ -58,6 +58,15 @@ const DisplayInfor = (props) => {
     const handleShowHide = () => {
         setIsShowListUser(!isShowListUser)
     }
+
+    useEffect(
+        () => {
+            if (listUsers.length === 0) {
+                alert("You deteted all the answer")
+            }
+            console.log(">> call me useEffect")
+        },[listUsers]
+    )
     return(
         <div className="display-user-controller">
             
